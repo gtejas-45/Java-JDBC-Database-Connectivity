@@ -1,0 +1,123 @@
+
+mysql> CREATE DATABASE Company;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> use company;
+Database changed
+
+mysql> create table Empolyee(id INT PRIMARY KEY, name VARCHAR(200),job_name VARCHAR(200),salary DOUBLE);
+Query OK, 0 rows affected (0.09 sec)
+
+mysql> DESC EMPOLYEE;
++----------+--------------+------+-----+---------+-------+
+| Field    | Type         | Null | Key | Default | Extra |
++----------+--------------+------+-----+---------+-------+
+| id       | int          | NO   | PRI | NULL    |       |
+| name     | varchar(200) | YES  |     | NULL    |       |
+| job_name | varchar(200) | YES  |     | NULL    |       |
+| salary   | double       | YES  |     | NULL    |       |
++----------+--------------+------+-----+---------+-------+
+4 rows in set (0.03 sec)
+
+mysql> INSERT INTO EMPOLYEE(ID,NAME,JOB_NAME,SALARY) VALUES (1,"TEJAS","SOFTWARE ENGINEER",500000),(2,"YASH","CHAPRI",30000);
+Query OK, 2 rows affected (0.03 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM EMPOLYEE;
++----+-------+-------------------+--------+
+| id | name  | job_name          | salary |
++----+-------+-------------------+--------+
+|  1 | TEJAS | SOFTWARE ENGINEER | 500000 |
+|  2 | YASH  | CHAPRI            |  30000 |
++----+-------+-------------------+--------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT * FROM EMPOLYEE;
++----+-------+-------------------+--------+
+| id | name  | job_name          | salary |
++----+-------+-------------------+--------+
+|  1 | TEJAS | SOFTWARE ENGINEER | 500000 |
+|  2 | YASH  | CHAPRI            |  30000 |
+|  3 | raj   | berojgar          |     40 |
++----+-------+-------------------+--------+
+3 rows in set (0.03 sec)
+
+mysql> SELECT * FROM EMPOLYEE;
++----+-------+-------------------+--------+
+| id | name  | job_name          | salary |
++----+-------+-------------------+--------+
+|  1 | TEJAS | SOFTWARE ENGINEER | 500000 |
+|  2 | YASH  | CHAPRI            |  30000 |
++----+-------+-------------------+--------+
+2 rows in set (0.01 sec)
+
+mysql> SELECT * FROM EMPOLYEE;
++----+-------+-------------------+--------+
+| id | name  | job_name          | salary |
++----+-------+-------------------+--------+
+|  1 | TEJAS | SOFTWARE ENGINEER | 500000 |
+|  2 | YASH  | CHAPRI            |  30000 |
+|  3 | raj   | berojgar          |     40 |
++----+-------+-------------------+--------+
+3 rows in set (0.01 sec)
+
+mysql> SELECT * FROM EMPOLYEE;
++----+-------+-------------------+--------+
+| id | name  | job_name          | salary |
++----+-------+-------------------+--------+
+|  1 | TEJAS | SOFTWARE ENGINEER | 500000 |
+|  2 | YASH  | DRONE HANDLER     |  30000 |
+|  3 | raj   | berojgar          |     40 |
++----+-------+-------------------+--------+
+3 rows in set (0.00 sec)
+
+mysql> SELECT * FROM EMPOLYEE;
++----+-------+-------------------+--------+
+| id | name  | job_name          | salary |
++----+-------+-------------------+--------+
+|  1 | TEJAS | SOFTWARE ENGINEER | 500000 |
+|  2 | YASH  | DRONE HANDLER     |  50000 |
+|  3 | raj   | berojgar          |     40 |
++----+-------+-------------------+--------+
+3 rows in set (0.00 sec)
+
+
+//image table
+mysql> Create table image(id INT AUTO_INCREMENT PRIMARY KEY, image_data LONGBLOB NOT NULL,uploaded_img TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
+mysql> SELECT * FROM image;
+
+
+//account table
+mysql> create table account(acc_num VARCHAR(20) PRIMARY KEY, balance DECIMAL(10,2) NOT NULL);
+Query OK, 0 rows affected (0.11 sec)
+
+mysql> INSERT INTO account(acc_num,balance) values("acc123",1000),("acc1234",200);
+Query OK, 2 rows affected (0.03 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> select * from account;
++---------+---------+
+| acc_num | balance |
++---------+---------+
+| acc123  | 1000.00 |
+| acc1234 |  200.00 |
++---------+---------+
+2 rows in set (0.01 sec)
+
+mysql> select * from account;
++---------+---------+
+| acc_num | balance |
++---------+---------+
+| acc123  |  500.00 |
+| acc1234 |  700.00 |
++---------+---------+
+2 rows in set (0.00 sec)
+
+mysql> select * from account;
++---------+---------+
+| acc_num | balance |
++---------+---------+
+| acc123  |    0.00 |
+| acc1234 | 1200.00 |
++---------+---------+
+2 rows in set (0.00 sec)
